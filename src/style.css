@@ -1,0 +1,29 @@
+#left-arrow,
+#right-arrow {
+  width: 30px;
+}
+
+#slider-wrapper {
+  display: grid;
+}
+
+#image-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.image {
+  width: 500px;
+}
+
+#nav-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  background: grey;
+  border-radius: 50%;
+}
