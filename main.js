@@ -427,30 +427,88 @@ ___CSS_LOADER_EXPORT___.push([module.id, `#left-arrow,
 }
 
 #slider-wrapper {
+  width: 600px;
+  /* height: 600px; */
+  background: rgb(0, 94, 117);
+
   display: grid;
-}
+  grid-template-rows: 430px;
+  grid-template-columns: 1fr;
+  place-items: center;
 
-#image-wrapper {
-  display: flex;
-  gap: 10px;
-}
+  #inner-element-wrapper {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
 
-.image {
-  width: 500px;
-}
+    /* padding: 50px; */
 
-#nav-dots {
-  display: flex;
-  gap: 5px;
-}
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
 
-.dot {
-  width: 15px;
-  height: 15px;
-  background: grey;
-  border-radius: 50%;
+    #left-arrow,
+    #right-arrow {
+      z-index: 2;
+      background: #eeeeee75;
+      transition: background 300ms;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    #left-arrow:hover,
+    #right-arrow:hover {
+      background: #eeeeee;
+    }
+
+    #left-arrow {
+      grid-column: 1 / 2;
+    }
+
+    #image-wrapper {
+      grid-column: 2 / 3;
+
+      width: 500px;
+      height: 300px;
+      /* overflow: hidden; */
+      background: rgb(52, 82, 0);
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image {
+      position: absolute;
+      transition: 300ms ease-in-out;
+      width: 500px;
+      object-fit: scale-down;
+    }
+
+    #right-arrow {
+      grid-column: 3 / 4;
+    }
+  }
+
+  #nav-dots {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    align-self: end;
+    position: relative;
+    bottom: 17px;
+
+    display: flex;
+    gap: 5px;
+
+    .dot {
+      width: 15px;
+      height: 15px;
+      background: grey;
+      border-radius: 50%;
+    }
+  }
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;;EAEE,WAAW;AACb;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,aAAa;EACb,SAAS;AACX;;AAEA;EACE,YAAY;AACd;;AAEA;EACE,aAAa;EACb,QAAQ;AACV;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,gBAAgB;EAChB,kBAAkB;AACpB","sourcesContent":["#left-arrow,\n#right-arrow {\n  width: 30px;\n}\n\n#slider-wrapper {\n  display: grid;\n}\n\n#image-wrapper {\n  display: flex;\n  gap: 10px;\n}\n\n.image {\n  width: 500px;\n}\n\n#nav-dots {\n  display: flex;\n  gap: 5px;\n}\n\n.dot {\n  width: 15px;\n  height: 15px;\n  background: grey;\n  border-radius: 50%;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;;EAEE,WAAW;AACb;;AAEA;EACE,YAAY;EACZ,mBAAmB;EACnB,2BAA2B;;EAE3B,aAAa;EACb,yBAAyB;EACzB,0BAA0B;EAC1B,mBAAmB;;EAEnB;IACE,eAAe;IACf,kBAAkB;;IAElB,mBAAmB;;IAEnB,aAAa;IACb,kCAAkC;IAClC,mBAAmB;;IAEnB;;MAEE,UAAU;MACV,qBAAqB;MACrB,4BAA4B;MAC5B,YAAY;MACZ,kBAAkB;IACpB;;IAEA;;MAEE,mBAAmB;IACrB;;IAEA;MACE,kBAAkB;IACpB;;IAEA;MACE,kBAAkB;;MAElB,YAAY;MACZ,aAAa;MACb,sBAAsB;MACtB,0BAA0B;MAC1B,kBAAkB;;MAElB,aAAa;MACb,uBAAuB;MACvB,mBAAmB;IACrB;;IAEA;MACE,kBAAkB;MAClB,6BAA6B;MAC7B,YAAY;MACZ,sBAAsB;IACxB;;IAEA;MACE,kBAAkB;IACpB;EACF;;EAEA;IACE,eAAe;IACf,kBAAkB;IAClB,eAAe;IACf,kBAAkB;IAClB,YAAY;;IAEZ,aAAa;IACb,QAAQ;;IAER;MACE,WAAW;MACX,YAAY;MACZ,gBAAgB;MAChB,kBAAkB;IACpB;EACF;AACF","sourcesContent":["#left-arrow,\n#right-arrow {\n  width: 30px;\n}\n\n#slider-wrapper {\n  width: 600px;\n  /* height: 600px; */\n  background: rgb(0, 94, 117);\n\n  display: grid;\n  grid-template-rows: 430px;\n  grid-template-columns: 1fr;\n  place-items: center;\n\n  #inner-element-wrapper {\n    grid-row: 1 / 2;\n    grid-column: 1 / 2;\n\n    /* padding: 50px; */\n\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    place-items: center;\n\n    #left-arrow,\n    #right-arrow {\n      z-index: 2;\n      background: #eeeeee75;\n      transition: background 300ms;\n      padding: 5px;\n      border-radius: 5px;\n    }\n\n    #left-arrow:hover,\n    #right-arrow:hover {\n      background: #eeeeee;\n    }\n\n    #left-arrow {\n      grid-column: 1 / 2;\n    }\n\n    #image-wrapper {\n      grid-column: 2 / 3;\n\n      width: 500px;\n      height: 300px;\n      /* overflow: hidden; */\n      background: rgb(52, 82, 0);\n      position: relative;\n\n      display: flex;\n      justify-content: center;\n      align-items: center;\n    }\n\n    .image {\n      position: absolute;\n      transition: 300ms ease-in-out;\n      width: 500px;\n      object-fit: scale-down;\n    }\n\n    #right-arrow {\n      grid-column: 3 / 4;\n    }\n  }\n\n  #nav-dots {\n    grid-row: 1 / 2;\n    grid-column: 1 / 2;\n    align-self: end;\n    position: relative;\n    bottom: 17px;\n\n    display: flex;\n    gap: 5px;\n\n    .dot {\n      width: 15px;\n      height: 15px;\n      background: grey;\n      border-radius: 50%;\n    }\n  }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -949,6 +1007,67 @@ function styleTagTransform(css, styleElement) {
 }
 module.exports = styleTagTransform;
 
+/***/ }),
+
+/***/ "./src/modules/dom-manipulation.js":
+/*!*****************************************!*\
+  !*** ./src/modules/dom-manipulation.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   positionImages: () => (/* binding */ positionImages)
+/* harmony export */ });
+
+
+//? **`` Loops thru all the images, measures their width, and lines the images up in a row
+function positionImages(direction) {
+  const images = document.querySelectorAll('.image');
+  let offset = 0;
+  if (direction === 'right-arrow') {
+    offset--;
+    console.log(index);
+  }
+  console.log('offset');
+  console.log(offset);
+
+  images.forEach((img, index) => {
+    console.log(index);
+
+    img.style.left = index * img.offsetWidth + 'px';
+  });
+}
+
+
+/***/ }),
+
+/***/ "./src/modules/event-handlers.js":
+/*!***************************************!*\
+  !*** ./src/modules/event-handlers.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   arrowLogic: () => (/* binding */ arrowLogic)
+/* harmony export */ });
+/* harmony import */ var _dom_manipulation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom-manipulation */ "./src/modules/dom-manipulation.js");
+
+
+
+
+function arrowLogic() {
+  const arrows = document.querySelectorAll('[data-arrow]');
+
+  arrows.forEach((arrow) => {
+    arrow.addEventListener('click', () => {
+      (0,_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.positionImages)(arrow.id);
+    });
+  });
+}
+
+
 /***/ })
 
 /******/ 	});
@@ -1031,10 +1150,20 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _normalize_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./normalize.css */ "./src/normalize.css");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
+/* harmony import */ var _modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/dom-manipulation */ "./src/modules/dom-manipulation.js");
+/* harmony import */ var _modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/event-handlers */ "./src/modules/event-handlers.js");
+/* harmony import */ var _normalize_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./normalize.css */ "./src/normalize.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 
 
+
+
+
+(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.positionImages)();
+(0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.arrowLogic)();
+
+//* dom-manipulation.js - line: 4
+//todo **`` Mess with the image offset. I'm trying to feed it the direction parameter of 'left-arrow' or 'right-arrow' and have the offset value change the index value of the images so they move around
 
 })();
 
