@@ -6,5 +6,6 @@ import './style.css';
 positionImages();
 arrowLogic();
 
-//* dom-manipulation.js - line: 4
-//todo **`` Mess with the image offset. I'm trying to feed it the direction parameter of 'left-arrow' or 'right-arrow' and have the offset value change the index value of the images so they move around
+//! **`` NPX WEBPACK --WATCH duder!
+
+//todo **`` Mess with nav dots. Make them dynamically created based on how many images there are. Link the current lit up dot to the 'active' classed image. Make the 'active' class move with the visible image.

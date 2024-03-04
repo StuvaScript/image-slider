@@ -47,7 +47,7 @@
       width: 500px;
       height: 300px;
       /* overflow: hidden; */
-      background: rgb(52, 82, 0);
+      /* background: rgb(52, 82, 0); */
       position: relative;
 
       display: flex;
@@ -57,7 +57,7 @@
 
     .image {
       position: absolute;
-      transition: 300ms ease-in-out;
+      transition: 500ms ease-in-out;
       width: 500px;
       object-fit: scale-down;
     }
