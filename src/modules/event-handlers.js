@@ -1,4 +1,4 @@
-import { positionImages } from './dom-manipulation';
+import { highlightNavDot, positionImages } from './dom-manipulation';
 
 export { arrowLogic };
 
@@ -19,6 +19,9 @@ function arrowLogic() {
       if (offsetImage < 0) {
         offsetImage = imageCount - 1;
       }
+      console.log(offsetImage);
+
+      highlightNavDot(offsetImage);
 
       positionImages(offsetImage);
     });

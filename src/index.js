@@ -1,11 +1,17 @@
-import { createNavDots, positionImages } from './modules/dom-manipulation';
+import {
+  createNavDots,
+  highlightNavDot,
+  positionImages,
+} from './modules/dom-manipulation';
 import { arrowLogic } from './modules/event-handlers';
 import './normalize.css';
 import './style.css';
 
 positionImages();
-arrowLogic();
 createNavDots();
+highlightNavDot();
+
+arrowLogic();
 
 //! **`` NPX WEBPACK --WATCH duder!
 

@@ -80,8 +80,14 @@
     .dot {
       width: 15px;
       height: 15px;
-      background: grey;
+      background: #808080;
       border-radius: 50%;
+      transition: background 200ms;
+
+      &:hover:not([data-nav-dot='active']) {
+        cursor: pointer;
+        background: #bebebe;
+      }
     }
 
     [data-nav-dot='active'] {
