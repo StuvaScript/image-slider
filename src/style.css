@@ -83,5 +83,9 @@
       background: grey;
       border-radius: 50%;
     }
+
+    [data-nav-dot='active'] {
+      background: red;
+    }
   }
 }
