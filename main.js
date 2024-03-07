@@ -506,9 +506,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, `#left-arrow,
       background: grey;
       border-radius: 50%;
     }
+
+    [data-nav-dot='active'] {
+      background: red;
+    }
   }
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;;EAEE,WAAW;AACb;;AAEA;EACE,YAAY;EACZ,mBAAmB;EACnB,2BAA2B;;EAE3B,aAAa;EACb,yBAAyB;EACzB,0BAA0B;EAC1B,mBAAmB;;EAEnB;IACE,eAAe;IACf,kBAAkB;;IAElB,mBAAmB;;IAEnB,aAAa;IACb,kCAAkC;IAClC,mBAAmB;;IAEnB;;MAEE,UAAU;MACV,qBAAqB;MACrB,4BAA4B;MAC5B,YAAY;MACZ,kBAAkB;IACpB;;IAEA;;MAEE,mBAAmB;IACrB;;IAEA;MACE,kBAAkB;IACpB;;IAEA;MACE,kBAAkB;;MAElB,YAAY;MACZ,aAAa;MACb,sBAAsB;MACtB,gCAAgC;MAChC,kBAAkB;;MAElB,aAAa;MACb,uBAAuB;MACvB,mBAAmB;IACrB;;IAEA;MACE,kBAAkB;MAClB,6BAA6B;MAC7B,YAAY;MACZ,sBAAsB;IACxB;;IAEA;MACE,kBAAkB;IACpB;EACF;;EAEA;IACE,eAAe;IACf,kBAAkB;IAClB,eAAe;IACf,kBAAkB;IAClB,YAAY;;IAEZ,aAAa;IACb,QAAQ;;IAER;MACE,WAAW;MACX,YAAY;MACZ,gBAAgB;MAChB,kBAAkB;IACpB;EACF;AACF","sourcesContent":["#left-arrow,\n#right-arrow {\n  width: 30px;\n}\n\n#slider-wrapper {\n  width: 600px;\n  /* height: 600px; */\n  background: rgb(0, 94, 117);\n\n  display: grid;\n  grid-template-rows: 430px;\n  grid-template-columns: 1fr;\n  place-items: center;\n\n  #inner-element-wrapper {\n    grid-row: 1 / 2;\n    grid-column: 1 / 2;\n\n    /* padding: 50px; */\n\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    place-items: center;\n\n    #left-arrow,\n    #right-arrow {\n      z-index: 2;\n      background: #eeeeee75;\n      transition: background 300ms;\n      padding: 5px;\n      border-radius: 5px;\n    }\n\n    #left-arrow:hover,\n    #right-arrow:hover {\n      background: #eeeeee;\n    }\n\n    #left-arrow {\n      grid-column: 1 / 2;\n    }\n\n    #image-wrapper {\n      grid-column: 2 / 3;\n\n      width: 500px;\n      height: 300px;\n      /* overflow: hidden; */\n      /* background: rgb(52, 82, 0); */\n      position: relative;\n\n      display: flex;\n      justify-content: center;\n      align-items: center;\n    }\n\n    .image {\n      position: absolute;\n      transition: 500ms ease-in-out;\n      width: 500px;\n      object-fit: scale-down;\n    }\n\n    #right-arrow {\n      grid-column: 3 / 4;\n    }\n  }\n\n  #nav-dots {\n    grid-row: 1 / 2;\n    grid-column: 1 / 2;\n    align-self: end;\n    position: relative;\n    bottom: 17px;\n\n    display: flex;\n    gap: 5px;\n\n    .dot {\n      width: 15px;\n      height: 15px;\n      background: grey;\n      border-radius: 50%;\n    }\n  }\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;;EAEE,WAAW;AACb;;AAEA;EACE,YAAY;EACZ,mBAAmB;EACnB,2BAA2B;;EAE3B,aAAa;EACb,yBAAyB;EACzB,0BAA0B;EAC1B,mBAAmB;;EAEnB;IACE,eAAe;IACf,kBAAkB;;IAElB,mBAAmB;;IAEnB,aAAa;IACb,kCAAkC;IAClC,mBAAmB;;IAEnB;;MAEE,UAAU;MACV,qBAAqB;MACrB,4BAA4B;MAC5B,YAAY;MACZ,kBAAkB;IACpB;;IAEA;;MAEE,mBAAmB;IACrB;;IAEA;MACE,kBAAkB;IACpB;;IAEA;MACE,kBAAkB;;MAElB,YAAY;MACZ,aAAa;MACb,sBAAsB;MACtB,gCAAgC;MAChC,kBAAkB;;MAElB,aAAa;MACb,uBAAuB;MACvB,mBAAmB;IACrB;;IAEA;MACE,kBAAkB;MAClB,6BAA6B;MAC7B,YAAY;MACZ,sBAAsB;IACxB;;IAEA;MACE,kBAAkB;IACpB;EACF;;EAEA;IACE,eAAe;IACf,kBAAkB;IAClB,eAAe;IACf,kBAAkB;IAClB,YAAY;;IAEZ,aAAa;IACb,QAAQ;;IAER;MACE,WAAW;MACX,YAAY;MACZ,gBAAgB;MAChB,kBAAkB;IACpB;;IAEA;MACE,eAAe;IACjB;EACF;AACF","sourcesContent":["#left-arrow,\n#right-arrow {\n  width: 30px;\n}\n\n#slider-wrapper {\n  width: 600px;\n  /* height: 600px; */\n  background: rgb(0, 94, 117);\n\n  display: grid;\n  grid-template-rows: 430px;\n  grid-template-columns: 1fr;\n  place-items: center;\n\n  #inner-element-wrapper {\n    grid-row: 1 / 2;\n    grid-column: 1 / 2;\n\n    /* padding: 50px; */\n\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    place-items: center;\n\n    #left-arrow,\n    #right-arrow {\n      z-index: 2;\n      background: #eeeeee75;\n      transition: background 300ms;\n      padding: 5px;\n      border-radius: 5px;\n    }\n\n    #left-arrow:hover,\n    #right-arrow:hover {\n      background: #eeeeee;\n    }\n\n    #left-arrow {\n      grid-column: 1 / 2;\n    }\n\n    #image-wrapper {\n      grid-column: 2 / 3;\n\n      width: 500px;\n      height: 300px;\n      /* overflow: hidden; */\n      /* background: rgb(52, 82, 0); */\n      position: relative;\n\n      display: flex;\n      justify-content: center;\n      align-items: center;\n    }\n\n    .image {\n      position: absolute;\n      transition: 500ms ease-in-out;\n      width: 500px;\n      object-fit: scale-down;\n    }\n\n    #right-arrow {\n      grid-column: 3 / 4;\n    }\n  }\n\n  #nav-dots {\n    grid-row: 1 / 2;\n    grid-column: 1 / 2;\n    align-self: end;\n    position: relative;\n    bottom: 17px;\n\n    display: flex;\n    gap: 5px;\n\n    .dot {\n      width: 15px;\n      height: 15px;\n      background: grey;\n      border-radius: 50%;\n    }\n\n    [data-nav-dot='active'] {\n      background: red;\n    }\n  }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1017,6 +1021,7 @@ module.exports = styleTagTransform;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createNavDots: () => (/* binding */ createNavDots),
 /* harmony export */   positionImages: () => (/* binding */ positionImages)
 /* harmony export */ });
 
@@ -1027,6 +1032,19 @@ function positionImages(offsetImage = 0) {
 
   images.forEach((img, index) => {
     img.style.left = (index + offsetImage * -1) * img.offsetWidth + 'px';
+  });
+}
+
+//? **`` Finds all the images and for each image it creates a 'nav dot' , gives it a class and a data attribute, and appends it to the '#nav-dot' div element
+function createNavDots() {
+  const navDots = document.querySelector('#nav-dots');
+  const images = document.querySelectorAll('.image');
+
+  images.forEach((image) => {
+    const div = document.createElement('div');
+    div.classList.add('dot');
+    div.setAttribute('data-nav-dot', '');
+    navDots.append(div);
   });
 }
 
@@ -1165,6 +1183,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.positionImages)();
 (0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.arrowLogic)();
+(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createNavDots)();
 
 //! **`` NPX WEBPACK --WATCH duder!
 
