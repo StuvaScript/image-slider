@@ -3,7 +3,7 @@ import {
   highlightNavDot,
   positionImages,
 } from './modules/dom-manipulation';
-import { arrowLogic } from './modules/event-handlers';
+import { arrowLogic, navDotClickLogic } from './modules/event-handlers';
 import './normalize.css';
 import './style.css';
 
@@ -12,6 +12,7 @@ createNavDots();
 highlightNavDot();
 
 arrowLogic();
+navDotClickLogic();
 
 //! **`` NPX WEBPACK --WATCH duder!
 
