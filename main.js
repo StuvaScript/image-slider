@@ -1035,9 +1035,7 @@ __webpack_require__.r(__webpack_exports__);
 
 //? **`` Loops thru all the images, takes the 'offsetImage' parameter number into consideration, measures the image's width, and lines the images up in a row.
 function positionImages(offsetImage = 0) {
-  const images = document.querySelectorAll('.image');
-
-  images.forEach((img, index) => {
+  [...document.querySelectorAll('.image')].map((img, index) => {
     img.style.left = (index + offsetImage * -1) * img.offsetWidth + 'px';
   });
 }
@@ -1045,9 +1043,8 @@ function positionImages(offsetImage = 0) {
 //? **`` Finds all the images and for each image it creates a 'nav dot' , gives it a class and a data attribute, and appends it to the '#nav-dot' div element
 function createNavDots() {
   const navDots = document.querySelector('#nav-dots');
-  const images = document.querySelectorAll('.image');
 
-  images.forEach(() => {
+  [...document.querySelectorAll('.image')].map(() => {
     const div = document.createElement('div');
     div.classList.add('dot');
     div.setAttribute('data-nav-dot', '');
@@ -1059,7 +1056,7 @@ function createNavDots() {
 function highlightNavDot(offsetImage = 0) {
   const navDots = document.querySelectorAll('.dot');
 
-  navDots.forEach((dot) => {
+  [...document.querySelectorAll('.dot')].map((dot) => {
     dot.attributes['data-nav-dot'].value = '';
   });
 
@@ -1077,7 +1074,8 @@ function highlightNavDot(offsetImage = 0) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   arrowLogic: () => (/* binding */ arrowLogic)
+/* harmony export */   arrowLogic: () => (/* binding */ arrowLogic),
+/* harmony export */   navDotClickLogic: () => (/* binding */ navDotClickLogic)
 /* harmony export */ });
 /* harmony import */ var _dom_manipulation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom-manipulation */ "./src/modules/dom-manipulation.js");
 
@@ -1090,7 +1088,7 @@ function arrowLogic() {
   const imageCount = document.querySelectorAll('.image').length;
   let offsetImage = 0;
 
-  arrows.forEach((arrow) => {
+  [...arrows].map((arrow) => {
     arrow.addEventListener('click', () => {
       arrow.id == 'right-arrow' ? offsetImage++ : offsetImage--;
 
@@ -1101,11 +1099,21 @@ function arrowLogic() {
       if (offsetImage < 0) {
         offsetImage = imageCount - 1;
       }
-      console.log(offsetImage);
 
       (0,_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.highlightNavDot)(offsetImage);
-
       (0,_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.positionImages)(offsetImage);
+    });
+  });
+}
+
+//? **`` Add an event listener to all the nav dots, finds the index of the one clicked and passes that number into the two function that highlight the nav dots and move the images around.
+function navDotClickLogic() {
+  [...document.querySelectorAll('[data-nav-dot]')].map((dot) => {
+    dot.addEventListener('click', () => {
+      const clickedNavDot = [...dot.parentNode.children].indexOf(dot);
+
+      (0,_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.highlightNavDot)(clickedNavDot);
+      (0,_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.positionImages)(clickedNavDot);
     });
   });
 }
@@ -1207,6 +1215,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.highlightNavDot)();
 
 (0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.arrowLogic)();
+(0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.navDotClickLogic)();
 
 //! **`` NPX WEBPACK --WATCH duder!
 
