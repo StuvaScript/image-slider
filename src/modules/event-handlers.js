@@ -3,10 +3,9 @@ import { highlightNavDot, positionImages } from './dom-manipulation';
 export { arrowLogic, navDotClickLogic };
 
 //? **`` Adds or subtracts from the 'offsetImage' number and uses that number to change the position of the images.
-function arrowLogic() {
+function arrowLogic(offsetImage = 0) {
   const arrows = document.querySelectorAll('[data-arrow]');
   const imageCount = document.querySelectorAll('.image').length;
-  let offsetImage = 0;
 
   [...arrows].map((arrow) => {
     arrow.addEventListener('click', () => {
@@ -26,7 +25,7 @@ function arrowLogic() {
   });
 }
 
-//? **`` Add an event listener to all the nav dots, finds the index of the one clicked and passes that number into the two function that highlight the nav dots and move the images around.
+//? **`` Add an event listener to all the nav dots, finds the index of the one clicked and passes that number into the two function that highlight the nav dots and move the images around.It finally calls the 'arrowLogic' function to reset the arrow offset number to the current index.
 function navDotClickLogic() {
   [...document.querySelectorAll('[data-nav-dot]')].map((dot) => {
     dot.addEventListener('click', () => {
@@ -34,6 +33,7 @@ function navDotClickLogic() {
 
       highlightNavDot(clickedNavDot);
       positionImages(clickedNavDot);
+      arrowLogic(clickedNavDot);
     });
   });
 }

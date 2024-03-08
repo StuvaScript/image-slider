@@ -6,7 +6,7 @@
 #slider-wrapper {
   width: 600px;
   /* height: 600px; */
-  background: rgb(0, 94, 117);
+  background: #222;
 
   display: grid;
   grid-template-rows: 430px;
@@ -46,7 +46,7 @@
 
       width: 500px;
       height: 300px;
-      /* overflow: hidden; */
+      overflow: hidden;
       /* background: rgb(52, 82, 0); */
       position: relative;
 
@@ -91,7 +91,7 @@
     }
 
     [data-nav-dot='active'] {
-      background: red;
+      background: #ffffff;
     }
   }
 }
