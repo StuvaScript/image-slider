@@ -16,4 +16,5 @@ navDotClickLogic();
 
 //! **`` NPX WEBPACK --WATCH duder!
 
-//todo **`` Mess with nav dots. Make them dynamically created based on how many images there are. Link the current lit up dot to the 'active' classed image. Make the 'active' class move with the visible image.
+//todo **`` Mess with color palette
+//todo **`` Responsive design
