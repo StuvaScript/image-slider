@@ -16,5 +16,4 @@ navDotClickLogic();
 
 //! **`` NPX WEBPACK --WATCH duder!
 
-//todo **`` Mess with color palette
 //todo **`` Responsive design
