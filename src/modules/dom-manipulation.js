@@ -1,4 +1,6 @@
-export { positionImages, createNavDots, highlightNavDot };
+import favicon from '../icons/alien.png';
+
+export { positionImages, createNavDots, highlightNavDot, displayFavicon };
 
 //? **`` Loops thru all the images, takes the 'offsetImage' parameter number into consideration, measures the image's width, and lines the images up in a row.
 function positionImages(offsetImage = 0) {
@@ -28,4 +30,9 @@ function highlightNavDot(offsetImage = 0) {
   });
 
   navDots[offsetImage].attributes['data-nav-dot'].value = 'active';
+}
+
+//? **`` Displays the favicon
+function displayFavicon() {
+  document.querySelector('link[rel="icon"]').setAttribute('href', favicon);
 }

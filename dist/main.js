@@ -435,6 +435,7 @@ body {
   display: grid;
   grid-template-rows: 1fr auto;
   place-items: center;
+  gap: 10px;
 
   #slider-wrapper {
     width: min(600px, 90vw);
@@ -475,11 +476,6 @@ body {
         }
       }
 
-      /* #left-arrow:hover,
-      #right-arrow:hover {
-        background: var(--bright);
-      } */
-
       #left-arrow {
         grid-column: 1 / -1;
         grid-row: 1 / -1;
@@ -490,7 +486,7 @@ body {
         grid-column: 2 / 3;
         grid-row: 1 / -1;
 
-        width: 100%;
+        width: 99%;
         height: 300px;
         border-radius: 15px;
         overflow: hidden;
@@ -521,7 +517,7 @@ body {
       grid-column: 1 / 2;
       align-self: end;
       position: relative;
-      bottom: 17px;
+      bottom: 4%;
 
       display: flex;
       gap: 5px;
@@ -546,9 +542,7 @@ body {
 
   footer {
     width: 100vw;
-    /* height: 160px; */
     padding: 20px;
-    /* font-size: min(1rem, 0.75rem); */
     font-size: min(1rem, 4.5vw);
     letter-spacing: 0.75px;
     background: var(--dark);
@@ -569,7 +563,7 @@ body {
     }
   }
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,WAAW;EACX,YAAY;AACd;;AAEA;EACE,yCAAyC;EACzC,aAAa;EACb,iBAAiB;;EAEjB,aAAa;EACb,4BAA4B;EAC5B,mBAAmB;;EAEnB;IACE,uBAAuB;IACvB,uBAAuB;IACvB,mBAAmB;;IAEnB,aAAa;IACb,oCAAoC;IACpC,0BAA0B;IAC1B,mBAAmB;;IAEnB;MACE,eAAe;MACf,kBAAkB;;MAElB,WAAW;MACX,WAAW;;MAEX,aAAa;MACb,kCAAkC;MAClC,mBAAmB;;MAEnB;;QAEE,WAAW;QACX,UAAU;QACV,sBAAsB;QACtB,4BAA4B;QAC5B,YAAY;QACZ,kBAAkB;MACpB;;MAEA,8QAA8Q;MAC9Q;QACE;;UAEE,yBAAyB;QAC3B;MACF;;MAEA;;;SAGG;;MAEH;QACE,mBAAmB;QACnB,gBAAgB;QAChB,mBAAmB;MACrB;;MAEA;QACE,kBAAkB;QAClB,gBAAgB;;QAEhB,WAAW;QACX,aAAa;QACb,mBAAmB;QACnB,gBAAgB;QAChB,kBAAkB;;QAElB,aAAa;QACb,uBAAuB;QACvB,mBAAmB;MACrB;;MAEA;QACE,kBAAkB;QAClB,6BAA6B;QAC7B,mBAAmB;QACnB,uBAAuB;QACvB,sBAAsB;MACxB;;MAEA;QACE,mBAAmB;QACnB,gBAAgB;QAChB,iBAAiB;MACnB;IACF;;IAEA;MACE,eAAe;MACf,kBAAkB;MAClB,eAAe;MACf,kBAAkB;MAClB,YAAY;;MAEZ,aAAa;MACb,QAAQ;;MAER;QACE,WAAW;QACX,YAAY;QACZ,sBAAsB;QACtB,kBAAkB;QAClB,4BAA4B;;QAE5B;UACE,eAAe;QACjB;MACF;;MAEA;QACE,yBAAyB;MAC3B;IACF;EACF;;EAEA;IACE,YAAY;IACZ,mBAAmB;IACnB,aAAa;IACb,mCAAmC;IACnC,2BAA2B;IAC3B,sBAAsB;IACtB,uBAAuB;IACvB,iBAAiB;;IAEjB,aAAa;IACb,sBAAsB;IACtB,QAAQ;;IAER;;;MAGE,iBAAiB;IACnB;;IAEA;MACE,oBAAoB;IACtB;EACF;AACF","sourcesContent":[":root {\n  --bright: white;\n  --mid: #1ce;\n  --dark: #222;\n}\n\nbody {\n  font-family: Arial, Helvetica, sans-serif;\n  height: 100vh;\n  background: white;\n\n  display: grid;\n  grid-template-rows: 1fr auto;\n  place-items: center;\n\n  #slider-wrapper {\n    width: min(600px, 90vw);\n    background: var(--dark);\n    border-radius: 15px;\n\n    display: grid;\n    grid-template-rows: min(430px, 70vw);\n    grid-template-columns: 1fr;\n    place-items: center;\n\n    #inner-element-wrapper {\n      grid-row: 1 / 2;\n      grid-column: 1 / 2;\n\n      width: 100%;\n      padding: 3%;\n\n      display: grid;\n      grid-template-columns: 1fr 83% 1fr;\n      place-items: center;\n\n      #left-arrow,\n      #right-arrow {\n        width: 30px;\n        z-index: 2;\n        background: var(--mid);\n        transition: background 300ms;\n        padding: 5px;\n        border-radius: 5px;\n      }\n\n      /* **`` This detects if the device is able to hover (generally on desktop devices) and allows a hover state to happen. On non-hover devices (mobile) no hover state will be initiated. This is due to mobile devices having a stuck hover state once the element is clicked. */\n      @media (hover: hover) {\n        #left-arrow:hover,\n        #right-arrow:hover {\n          background: var(--bright);\n        }\n      }\n\n      /* #left-arrow:hover,\n      #right-arrow:hover {\n        background: var(--bright);\n      } */\n\n      #left-arrow {\n        grid-column: 1 / -1;\n        grid-row: 1 / -1;\n        justify-self: start;\n      }\n\n      #image-wrapper {\n        grid-column: 2 / 3;\n        grid-row: 1 / -1;\n\n        width: 100%;\n        height: 300px;\n        border-radius: 15px;\n        overflow: hidden;\n        position: relative;\n\n        display: flex;\n        justify-content: center;\n        align-items: center;\n      }\n\n      .image {\n        position: absolute;\n        transition: 500ms ease-in-out;\n        border-radius: 15px;\n        width: min(500px, 100%);\n        object-fit: scale-down;\n      }\n\n      #right-arrow {\n        grid-column: 1 / -1;\n        grid-row: 1 / -1;\n        justify-self: end;\n      }\n    }\n\n    #nav-dots {\n      grid-row: 1 / 2;\n      grid-column: 1 / 2;\n      align-self: end;\n      position: relative;\n      bottom: 17px;\n\n      display: flex;\n      gap: 5px;\n\n      .dot {\n        width: 15px;\n        height: 15px;\n        background: var(--mid);\n        border-radius: 50%;\n        transition: background 200ms;\n\n        &:hover:not([data-nav-dot='active']) {\n          cursor: pointer;\n        }\n      }\n\n      [data-nav-dot='active'] {\n        background: var(--bright);\n      }\n    }\n  }\n\n  footer {\n    width: 100vw;\n    /* height: 160px; */\n    padding: 20px;\n    /* font-size: min(1rem, 0.75rem); */\n    font-size: min(1rem, 4.5vw);\n    letter-spacing: 0.75px;\n    background: var(--dark);\n    color: var(--mid);\n\n    display: flex;\n    flex-direction: column;\n    gap: 2px;\n\n    a:link,\n    a:visited,\n    a:active {\n      color: var(--mid);\n    }\n\n    a:hover {\n      color: var(--bright);\n    }\n  }\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,WAAW;EACX,YAAY;AACd;;AAEA;EACE,yCAAyC;EACzC,aAAa;EACb,iBAAiB;;EAEjB,aAAa;EACb,4BAA4B;EAC5B,mBAAmB;EACnB,SAAS;;EAET;IACE,uBAAuB;IACvB,uBAAuB;IACvB,mBAAmB;;IAEnB,aAAa;IACb,oCAAoC;IACpC,0BAA0B;IAC1B,mBAAmB;;IAEnB;MACE,eAAe;MACf,kBAAkB;;MAElB,WAAW;MACX,WAAW;;MAEX,aAAa;MACb,kCAAkC;MAClC,mBAAmB;;MAEnB;;QAEE,WAAW;QACX,UAAU;QACV,sBAAsB;QACtB,4BAA4B;QAC5B,YAAY;QACZ,kBAAkB;MACpB;;MAEA,8QAA8Q;MAC9Q;QACE;;UAEE,yBAAyB;QAC3B;MACF;;MAEA;QACE,mBAAmB;QACnB,gBAAgB;QAChB,mBAAmB;MACrB;;MAEA;QACE,kBAAkB;QAClB,gBAAgB;;QAEhB,UAAU;QACV,aAAa;QACb,mBAAmB;QACnB,gBAAgB;QAChB,kBAAkB;;QAElB,aAAa;QACb,uBAAuB;QACvB,mBAAmB;MACrB;;MAEA;QACE,kBAAkB;QAClB,6BAA6B;QAC7B,mBAAmB;QACnB,uBAAuB;QACvB,sBAAsB;MACxB;;MAEA;QACE,mBAAmB;QACnB,gBAAgB;QAChB,iBAAiB;MACnB;IACF;;IAEA;MACE,eAAe;MACf,kBAAkB;MAClB,eAAe;MACf,kBAAkB;MAClB,UAAU;;MAEV,aAAa;MACb,QAAQ;;MAER;QACE,WAAW;QACX,YAAY;QACZ,sBAAsB;QACtB,kBAAkB;QAClB,4BAA4B;;QAE5B;UACE,eAAe;QACjB;MACF;;MAEA;QACE,yBAAyB;MAC3B;IACF;EACF;;EAEA;IACE,YAAY;IACZ,aAAa;IACb,2BAA2B;IAC3B,sBAAsB;IACtB,uBAAuB;IACvB,iBAAiB;;IAEjB,aAAa;IACb,sBAAsB;IACtB,QAAQ;;IAER;;;MAGE,iBAAiB;IACnB;;IAEA;MACE,oBAAoB;IACtB;EACF;AACF","sourcesContent":[":root {\n  --bright: white;\n  --mid: #1ce;\n  --dark: #222;\n}\n\nbody {\n  font-family: Arial, Helvetica, sans-serif;\n  height: 100vh;\n  background: white;\n\n  display: grid;\n  grid-template-rows: 1fr auto;\n  place-items: center;\n  gap: 10px;\n\n  #slider-wrapper {\n    width: min(600px, 90vw);\n    background: var(--dark);\n    border-radius: 15px;\n\n    display: grid;\n    grid-template-rows: min(430px, 70vw);\n    grid-template-columns: 1fr;\n    place-items: center;\n\n    #inner-element-wrapper {\n      grid-row: 1 / 2;\n      grid-column: 1 / 2;\n\n      width: 100%;\n      padding: 3%;\n\n      display: grid;\n      grid-template-columns: 1fr 83% 1fr;\n      place-items: center;\n\n      #left-arrow,\n      #right-arrow {\n        width: 30px;\n        z-index: 2;\n        background: var(--mid);\n        transition: background 300ms;\n        padding: 5px;\n        border-radius: 5px;\n      }\n\n      /* **`` This detects if the device is able to hover (generally on desktop devices) and allows a hover state to happen. On non-hover devices (mobile) no hover state will be initiated. This is due to mobile devices having a stuck hover state once the element is clicked. */\n      @media (hover: hover) {\n        #left-arrow:hover,\n        #right-arrow:hover {\n          background: var(--bright);\n        }\n      }\n\n      #left-arrow {\n        grid-column: 1 / -1;\n        grid-row: 1 / -1;\n        justify-self: start;\n      }\n\n      #image-wrapper {\n        grid-column: 2 / 3;\n        grid-row: 1 / -1;\n\n        width: 99%;\n        height: 300px;\n        border-radius: 15px;\n        overflow: hidden;\n        position: relative;\n\n        display: flex;\n        justify-content: center;\n        align-items: center;\n      }\n\n      .image {\n        position: absolute;\n        transition: 500ms ease-in-out;\n        border-radius: 15px;\n        width: min(500px, 100%);\n        object-fit: scale-down;\n      }\n\n      #right-arrow {\n        grid-column: 1 / -1;\n        grid-row: 1 / -1;\n        justify-self: end;\n      }\n    }\n\n    #nav-dots {\n      grid-row: 1 / 2;\n      grid-column: 1 / 2;\n      align-self: end;\n      position: relative;\n      bottom: 4%;\n\n      display: flex;\n      gap: 5px;\n\n      .dot {\n        width: 15px;\n        height: 15px;\n        background: var(--mid);\n        border-radius: 50%;\n        transition: background 200ms;\n\n        &:hover:not([data-nav-dot='active']) {\n          cursor: pointer;\n        }\n      }\n\n      [data-nav-dot='active'] {\n        background: var(--bright);\n      }\n    }\n  }\n\n  footer {\n    width: 100vw;\n    padding: 20px;\n    font-size: min(1rem, 4.5vw);\n    letter-spacing: 0.75px;\n    background: var(--dark);\n    color: var(--mid);\n\n    display: flex;\n    flex-direction: column;\n    gap: 2px;\n\n    a:link,\n    a:visited,\n    a:active {\n      color: var(--mid);\n    }\n\n    a:hover {\n      color: var(--bright);\n    }\n  }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1079,9 +1073,13 @@ module.exports = styleTagTransform;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   createNavDots: () => (/* binding */ createNavDots),
+/* harmony export */   displayFavicon: () => (/* binding */ displayFavicon),
 /* harmony export */   highlightNavDot: () => (/* binding */ highlightNavDot),
 /* harmony export */   positionImages: () => (/* binding */ positionImages)
 /* harmony export */ });
+/* harmony import */ var _icons_alien_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../icons/alien.png */ "./src/icons/alien.png");
+
+
 
 
 //? **`` Loops thru all the images, takes the 'offsetImage' parameter number into consideration, measures the image's width, and lines the images up in a row.
@@ -1112,6 +1110,11 @@ function highlightNavDot(offsetImage = 0) {
   });
 
   navDots[offsetImage].attributes['data-nav-dot'].value = 'active';
+}
+
+//? **`` Displays the favicon
+function displayFavicon() {
+  document.querySelector('link[rel="icon"]').setAttribute('href', _icons_alien_png__WEBPACK_IMPORTED_MODULE_0__);
 }
 
 
@@ -1170,6 +1173,16 @@ function navDotClickLogic() {
 }
 
 
+/***/ }),
+
+/***/ "./src/icons/alien.png":
+/*!*****************************!*\
+  !*** ./src/icons/alien.png ***!
+  \*****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "790d2d4b8b8289d76aa1.png";
+
 /***/ })
 
 /******/ 	});
@@ -1223,6 +1236,18 @@ function navDotClickLogic() {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -1237,6 +1262,29 @@ function navDotClickLogic() {
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
@@ -1261,16 +1309,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.displayFavicon)();
+
 (0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.positionImages)();
 (0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createNavDots)();
 (0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.highlightNavDot)();
 
 (0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.arrowLogic)();
 (0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.navDotClickLogic)();
-
-//! **`` NPX WEBPACK --WATCH duder!
-
-//todo **`` Responsive design
 
 })();
 

@@ -12,6 +12,7 @@ body {
   display: grid;
   grid-template-rows: 1fr auto;
   place-items: center;
+  gap: 10px;
 
   #slider-wrapper {
     width: min(600px, 90vw);
@@ -52,11 +53,6 @@ body {
         }
       }
 
-      /* #left-arrow:hover,
-      #right-arrow:hover {
-        background: var(--bright);
-      } */
-
       #left-arrow {
         grid-column: 1 / -1;
         grid-row: 1 / -1;
@@ -67,7 +63,7 @@ body {
         grid-column: 2 / 3;
         grid-row: 1 / -1;
 
-        width: 100%;
+        width: 99%;
         height: 300px;
         border-radius: 15px;
         overflow: hidden;
@@ -98,7 +94,7 @@ body {
       grid-column: 1 / 2;
       align-self: end;
       position: relative;
-      bottom: 17px;
+      bottom: 4%;
 
       display: flex;
       gap: 5px;
@@ -123,9 +119,7 @@ body {
 
   footer {
     width: 100vw;
-    /* height: 160px; */
     padding: 20px;
-    /* font-size: min(1rem, 0.75rem); */
     font-size: min(1rem, 4.5vw);
     letter-spacing: 0.75px;
     background: var(--dark);
