@@ -441,6 +441,7 @@ body {
     width: min(600px, 90vw);
     background: var(--dark);
     border-radius: 15px;
+    color: white;
 
     display: grid;
     grid-template-rows: min(430px, 70vw);
@@ -486,7 +487,7 @@ body {
         grid-column: 2 / 3;
         grid-row: 1 / -1;
 
-        width: 99%;
+        width: 100%;
         height: 300px;
         border-radius: 15px;
         overflow: hidden;
@@ -501,7 +502,7 @@ body {
         position: absolute;
         transition: 500ms ease-in-out;
         border-radius: 15px;
-        width: min(500px, 100%);
+        width: min(500px, 101%);
         object-fit: scale-down;
       }
 
@@ -563,7 +564,7 @@ body {
     }
   }
 }
-`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,WAAW;EACX,YAAY;AACd;;AAEA;EACE,yCAAyC;EACzC,aAAa;EACb,iBAAiB;;EAEjB,aAAa;EACb,4BAA4B;EAC5B,mBAAmB;EACnB,SAAS;;EAET;IACE,uBAAuB;IACvB,uBAAuB;IACvB,mBAAmB;;IAEnB,aAAa;IACb,oCAAoC;IACpC,0BAA0B;IAC1B,mBAAmB;;IAEnB;MACE,eAAe;MACf,kBAAkB;;MAElB,WAAW;MACX,WAAW;;MAEX,aAAa;MACb,kCAAkC;MAClC,mBAAmB;;MAEnB;;QAEE,WAAW;QACX,UAAU;QACV,sBAAsB;QACtB,4BAA4B;QAC5B,YAAY;QACZ,kBAAkB;MACpB;;MAEA,8QAA8Q;MAC9Q;QACE;;UAEE,yBAAyB;QAC3B;MACF;;MAEA;QACE,mBAAmB;QACnB,gBAAgB;QAChB,mBAAmB;MACrB;;MAEA;QACE,kBAAkB;QAClB,gBAAgB;;QAEhB,UAAU;QACV,aAAa;QACb,mBAAmB;QACnB,gBAAgB;QAChB,kBAAkB;;QAElB,aAAa;QACb,uBAAuB;QACvB,mBAAmB;MACrB;;MAEA;QACE,kBAAkB;QAClB,6BAA6B;QAC7B,mBAAmB;QACnB,uBAAuB;QACvB,sBAAsB;MACxB;;MAEA;QACE,mBAAmB;QACnB,gBAAgB;QAChB,iBAAiB;MACnB;IACF;;IAEA;MACE,eAAe;MACf,kBAAkB;MAClB,eAAe;MACf,kBAAkB;MAClB,UAAU;;MAEV,aAAa;MACb,QAAQ;;MAER;QACE,WAAW;QACX,YAAY;QACZ,sBAAsB;QACtB,kBAAkB;QAClB,4BAA4B;;QAE5B;UACE,eAAe;QACjB;MACF;;MAEA;QACE,yBAAyB;MAC3B;IACF;EACF;;EAEA;IACE,YAAY;IACZ,aAAa;IACb,2BAA2B;IAC3B,sBAAsB;IACtB,uBAAuB;IACvB,iBAAiB;;IAEjB,aAAa;IACb,sBAAsB;IACtB,QAAQ;;IAER;;;MAGE,iBAAiB;IACnB;;IAEA;MACE,oBAAoB;IACtB;EACF;AACF","sourcesContent":[":root {\n  --bright: white;\n  --mid: #1ce;\n  --dark: #222;\n}\n\nbody {\n  font-family: Arial, Helvetica, sans-serif;\n  height: 100vh;\n  background: white;\n\n  display: grid;\n  grid-template-rows: 1fr auto;\n  place-items: center;\n  gap: 10px;\n\n  #slider-wrapper {\n    width: min(600px, 90vw);\n    background: var(--dark);\n    border-radius: 15px;\n\n    display: grid;\n    grid-template-rows: min(430px, 70vw);\n    grid-template-columns: 1fr;\n    place-items: center;\n\n    #inner-element-wrapper {\n      grid-row: 1 / 2;\n      grid-column: 1 / 2;\n\n      width: 100%;\n      padding: 3%;\n\n      display: grid;\n      grid-template-columns: 1fr 83% 1fr;\n      place-items: center;\n\n      #left-arrow,\n      #right-arrow {\n        width: 30px;\n        z-index: 2;\n        background: var(--mid);\n        transition: background 300ms;\n        padding: 5px;\n        border-radius: 5px;\n      }\n\n      /* **`` This detects if the device is able to hover (generally on desktop devices) and allows a hover state to happen. On non-hover devices (mobile) no hover state will be initiated. This is due to mobile devices having a stuck hover state once the element is clicked. */\n      @media (hover: hover) {\n        #left-arrow:hover,\n        #right-arrow:hover {\n          background: var(--bright);\n        }\n      }\n\n      #left-arrow {\n        grid-column: 1 / -1;\n        grid-row: 1 / -1;\n        justify-self: start;\n      }\n\n      #image-wrapper {\n        grid-column: 2 / 3;\n        grid-row: 1 / -1;\n\n        width: 99%;\n        height: 300px;\n        border-radius: 15px;\n        overflow: hidden;\n        position: relative;\n\n        display: flex;\n        justify-content: center;\n        align-items: center;\n      }\n\n      .image {\n        position: absolute;\n        transition: 500ms ease-in-out;\n        border-radius: 15px;\n        width: min(500px, 100%);\n        object-fit: scale-down;\n      }\n\n      #right-arrow {\n        grid-column: 1 / -1;\n        grid-row: 1 / -1;\n        justify-self: end;\n      }\n    }\n\n    #nav-dots {\n      grid-row: 1 / 2;\n      grid-column: 1 / 2;\n      align-self: end;\n      position: relative;\n      bottom: 4%;\n\n      display: flex;\n      gap: 5px;\n\n      .dot {\n        width: 15px;\n        height: 15px;\n        background: var(--mid);\n        border-radius: 50%;\n        transition: background 200ms;\n\n        &:hover:not([data-nav-dot='active']) {\n          cursor: pointer;\n        }\n      }\n\n      [data-nav-dot='active'] {\n        background: var(--bright);\n      }\n    }\n  }\n\n  footer {\n    width: 100vw;\n    padding: 20px;\n    font-size: min(1rem, 4.5vw);\n    letter-spacing: 0.75px;\n    background: var(--dark);\n    color: var(--mid);\n\n    display: flex;\n    flex-direction: column;\n    gap: 2px;\n\n    a:link,\n    a:visited,\n    a:active {\n      color: var(--mid);\n    }\n\n    a:hover {\n      color: var(--bright);\n    }\n  }\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,eAAe;EACf,WAAW;EACX,YAAY;AACd;;AAEA;EACE,yCAAyC;EACzC,aAAa;EACb,iBAAiB;;EAEjB,aAAa;EACb,4BAA4B;EAC5B,mBAAmB;EACnB,SAAS;;EAET;IACE,uBAAuB;IACvB,uBAAuB;IACvB,mBAAmB;IACnB,YAAY;;IAEZ,aAAa;IACb,oCAAoC;IACpC,0BAA0B;IAC1B,mBAAmB;;IAEnB;MACE,eAAe;MACf,kBAAkB;;MAElB,WAAW;MACX,WAAW;;MAEX,aAAa;MACb,kCAAkC;MAClC,mBAAmB;;MAEnB;;QAEE,WAAW;QACX,UAAU;QACV,sBAAsB;QACtB,4BAA4B;QAC5B,YAAY;QACZ,kBAAkB;MACpB;;MAEA,8QAA8Q;MAC9Q;QACE;;UAEE,yBAAyB;QAC3B;MACF;;MAEA;QACE,mBAAmB;QACnB,gBAAgB;QAChB,mBAAmB;MACrB;;MAEA;QACE,kBAAkB;QAClB,gBAAgB;;QAEhB,WAAW;QACX,aAAa;QACb,mBAAmB;QACnB,gBAAgB;QAChB,kBAAkB;;QAElB,aAAa;QACb,uBAAuB;QACvB,mBAAmB;MACrB;;MAEA;QACE,kBAAkB;QAClB,6BAA6B;QAC7B,mBAAmB;QACnB,uBAAuB;QACvB,sBAAsB;MACxB;;MAEA;QACE,mBAAmB;QACnB,gBAAgB;QAChB,iBAAiB;MACnB;IACF;;IAEA;MACE,eAAe;MACf,kBAAkB;MAClB,eAAe;MACf,kBAAkB;MAClB,UAAU;;MAEV,aAAa;MACb,QAAQ;;MAER;QACE,WAAW;QACX,YAAY;QACZ,sBAAsB;QACtB,kBAAkB;QAClB,4BAA4B;;QAE5B;UACE,eAAe;QACjB;MACF;;MAEA;QACE,yBAAyB;MAC3B;IACF;EACF;;EAEA;IACE,YAAY;IACZ,aAAa;IACb,2BAA2B;IAC3B,sBAAsB;IACtB,uBAAuB;IACvB,iBAAiB;;IAEjB,aAAa;IACb,sBAAsB;IACtB,QAAQ;;IAER;;;MAGE,iBAAiB;IACnB;;IAEA;MACE,oBAAoB;IACtB;EACF;AACF","sourcesContent":[":root {\n  --bright: white;\n  --mid: #1ce;\n  --dark: #222;\n}\n\nbody {\n  font-family: Arial, Helvetica, sans-serif;\n  height: 100vh;\n  background: white;\n\n  display: grid;\n  grid-template-rows: 1fr auto;\n  place-items: center;\n  gap: 10px;\n\n  #slider-wrapper {\n    width: min(600px, 90vw);\n    background: var(--dark);\n    border-radius: 15px;\n    color: white;\n\n    display: grid;\n    grid-template-rows: min(430px, 70vw);\n    grid-template-columns: 1fr;\n    place-items: center;\n\n    #inner-element-wrapper {\n      grid-row: 1 / 2;\n      grid-column: 1 / 2;\n\n      width: 100%;\n      padding: 3%;\n\n      display: grid;\n      grid-template-columns: 1fr 83% 1fr;\n      place-items: center;\n\n      #left-arrow,\n      #right-arrow {\n        width: 30px;\n        z-index: 2;\n        background: var(--mid);\n        transition: background 300ms;\n        padding: 5px;\n        border-radius: 5px;\n      }\n\n      /* **`` This detects if the device is able to hover (generally on desktop devices) and allows a hover state to happen. On non-hover devices (mobile) no hover state will be initiated. This is due to mobile devices having a stuck hover state once the element is clicked. */\n      @media (hover: hover) {\n        #left-arrow:hover,\n        #right-arrow:hover {\n          background: var(--bright);\n        }\n      }\n\n      #left-arrow {\n        grid-column: 1 / -1;\n        grid-row: 1 / -1;\n        justify-self: start;\n      }\n\n      #image-wrapper {\n        grid-column: 2 / 3;\n        grid-row: 1 / -1;\n\n        width: 100%;\n        height: 300px;\n        border-radius: 15px;\n        overflow: hidden;\n        position: relative;\n\n        display: flex;\n        justify-content: center;\n        align-items: center;\n      }\n\n      .image {\n        position: absolute;\n        transition: 500ms ease-in-out;\n        border-radius: 15px;\n        width: min(500px, 101%);\n        object-fit: scale-down;\n      }\n\n      #right-arrow {\n        grid-column: 1 / -1;\n        grid-row: 1 / -1;\n        justify-self: end;\n      }\n    }\n\n    #nav-dots {\n      grid-row: 1 / 2;\n      grid-column: 1 / 2;\n      align-self: end;\n      position: relative;\n      bottom: 4%;\n\n      display: flex;\n      gap: 5px;\n\n      .dot {\n        width: 15px;\n        height: 15px;\n        background: var(--mid);\n        border-radius: 50%;\n        transition: background 200ms;\n\n        &:hover:not([data-nav-dot='active']) {\n          cursor: pointer;\n        }\n      }\n\n      [data-nav-dot='active'] {\n        background: var(--bright);\n      }\n    }\n  }\n\n  footer {\n    width: 100vw;\n    padding: 20px;\n    font-size: min(1rem, 4.5vw);\n    letter-spacing: 0.75px;\n    background: var(--dark);\n    color: var(--mid);\n\n    display: flex;\n    flex-direction: column;\n    gap: 2px;\n\n    a:link,\n    a:visited,\n    a:active {\n      color: var(--mid);\n    }\n\n    a:hover {\n      color: var(--bright);\n    }\n  }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1073,12 +1074,34 @@ module.exports = styleTagTransform;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   createNavDots: () => (/* binding */ createNavDots),
+/* harmony export */   displayArrows: () => (/* binding */ displayArrows),
 /* harmony export */   displayFavicon: () => (/* binding */ displayFavicon),
+/* harmony export */   displayImages: () => (/* binding */ displayImages),
 /* harmony export */   highlightNavDot: () => (/* binding */ highlightNavDot),
 /* harmony export */   positionImages: () => (/* binding */ positionImages)
 /* harmony export */ });
 /* harmony import */ var _icons_alien_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../icons/alien.png */ "./src/icons/alien.png");
+/* harmony import */ var _icons_left_arrow_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../icons/left-arrow.png */ "./src/icons/left-arrow.png");
+/* harmony import */ var _icons_right_arrow_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../icons/right-arrow.png */ "./src/icons/right-arrow.png");
+/* harmony import */ var _images_beach_birds_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../images/beach-birds.jpg */ "./src/images/beach-birds.jpg");
+/* harmony import */ var _images_dawn_mountains_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../images/dawn-mountains.jpg */ "./src/images/dawn-mountains.jpg");
+/* harmony import */ var _images_lake_sunset_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../images/lake-sunset.jpg */ "./src/images/lake-sunset.jpg");
+/* harmony import */ var _images_red_poppies_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../images/red-poppies.jpg */ "./src/images/red-poppies.jpg");
+/* harmony import */ var _images_sunrise_boat_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../images/sunrise-boat.jpg */ "./src/images/sunrise-boat.jpg");
 
+
+//! **`` The code below will be removed for the npm version of this project
+//! ************************************************************************
+
+
+
+
+
+
+
+
+
+//! ************************************************************************
 
 
 
@@ -1115,6 +1138,24 @@ function highlightNavDot(offsetImage = 0) {
 //? **`` Displays the favicon
 function displayFavicon() {
   document.querySelector('link[rel="icon"]').setAttribute('href', _icons_alien_png__WEBPACK_IMPORTED_MODULE_0__);
+}
+
+//! **`` The code below will be removed for the npm version of this project
+//? **`` Displays the arrow icons
+function displayArrows() {
+  document.querySelector('#left-arrow').setAttribute('src', _icons_left_arrow_png__WEBPACK_IMPORTED_MODULE_1__);
+  document.querySelector('#right-arrow').setAttribute('src', _icons_right_arrow_png__WEBPACK_IMPORTED_MODULE_2__);
+}
+
+//? **`` Displays the arrow icons
+function displayImages() {
+  const images = document.querySelectorAll('.image');
+
+  images[0].setAttribute('src', _images_beach_birds_jpg__WEBPACK_IMPORTED_MODULE_3__);
+  images[1].setAttribute('src', _images_dawn_mountains_jpg__WEBPACK_IMPORTED_MODULE_4__);
+  images[2].setAttribute('src', _images_lake_sunset_jpg__WEBPACK_IMPORTED_MODULE_5__);
+  images[3].setAttribute('src', _images_red_poppies_jpg__WEBPACK_IMPORTED_MODULE_6__);
+  images[4].setAttribute('src', _images_sunrise_boat_jpg__WEBPACK_IMPORTED_MODULE_7__);
 }
 
 
@@ -1182,6 +1223,76 @@ function navDotClickLogic() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "790d2d4b8b8289d76aa1.png";
+
+/***/ }),
+
+/***/ "./src/icons/left-arrow.png":
+/*!**********************************!*\
+  !*** ./src/icons/left-arrow.png ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "7fc5201146bcbca27027.png";
+
+/***/ }),
+
+/***/ "./src/icons/right-arrow.png":
+/*!***********************************!*\
+  !*** ./src/icons/right-arrow.png ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "6ab976a0f3ae89bc5c8a.png";
+
+/***/ }),
+
+/***/ "./src/images/beach-birds.jpg":
+/*!************************************!*\
+  !*** ./src/images/beach-birds.jpg ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "8d4427c92cf5d7fd408e.jpg";
+
+/***/ }),
+
+/***/ "./src/images/dawn-mountains.jpg":
+/*!***************************************!*\
+  !*** ./src/images/dawn-mountains.jpg ***!
+  \***************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "1e4beba4f132efa39c79.jpg";
+
+/***/ }),
+
+/***/ "./src/images/lake-sunset.jpg":
+/*!************************************!*\
+  !*** ./src/images/lake-sunset.jpg ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "7b0c3540fa7de9cc93ee.jpg";
+
+/***/ }),
+
+/***/ "./src/images/red-poppies.jpg":
+/*!************************************!*\
+  !*** ./src/images/red-poppies.jpg ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "aaaf3735b72940673771.jpg";
+
+/***/ }),
+
+/***/ "./src/images/sunrise-boat.jpg":
+/*!*************************************!*\
+  !*** ./src/images/sunrise-boat.jpg ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "09ba4a4864e67f5c4b3a.jpg";
 
 /***/ })
 
@@ -1309,6 +1420,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//! **`` The code below will be removed for the npm version of this project
+//! ************************************************************************
+
+//! ************************************************************************
+
 (0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.displayFavicon)();
 
 (0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.positionImages)();
@@ -1317,6 +1433,10 @@ __webpack_require__.r(__webpack_exports__);
 
 (0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.arrowLogic)();
 (0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.navDotClickLogic)();
+
+//! **`` The code below will be removed for the npm version of this project
+(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.displayArrows)();
+(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.displayImages)();
 
 })();
 
