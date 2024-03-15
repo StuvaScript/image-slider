@@ -1,10 +1,5 @@
-import {
-  createNavDots,
-  displayFavicon,
-  highlightNavDot,
-  positionImages,
-} from './modules/dom-manipulation';
-import { arrowLogic, navDotClickLogic } from './modules/event-handlers';
+import * as dom from './modules/dom-manipulation';
+import * as event from './modules/event-handlers';
 import './normalize.css';
 import './style.css';
 
@@ -13,14 +8,14 @@ import './style.css';
 import { displayArrows, displayImages } from './modules/dom-manipulation';
 //! ************************************************************************
 
-displayFavicon();
+dom.displayFavicon();
 
-positionImages();
-createNavDots();
-highlightNavDot();
+dom.positionImages();
+dom.createNavDots();
+dom.highlightNavDot();
 
-arrowLogic();
-navDotClickLogic();
+event.arrowLogic();
+event.navDotClickLogic();
 
 //! **`` The code below will be removed for the npm version of this project
 displayArrows();
