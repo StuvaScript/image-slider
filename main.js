@@ -1425,14 +1425,14 @@ __webpack_require__.r(__webpack_exports__);
 
 //! ************************************************************************
 
-(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.displayFavicon)();
+_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.displayFavicon();
 
-(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.positionImages)();
-(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createNavDots)();
-(0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.highlightNavDot)();
+_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.positionImages();
+_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.createNavDots();
+_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.highlightNavDot();
 
-(0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.arrowLogic)();
-(0,_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.navDotClickLogic)();
+_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.arrowLogic();
+_modules_event_handlers__WEBPACK_IMPORTED_MODULE_1__.navDotClickLogic();
 
 //! **`` The code below will be removed for the npm version of this project
 (0,_modules_dom_manipulation__WEBPACK_IMPORTED_MODULE_0__.displayArrows)();
